@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Captura de Datos</title>
+</head>
+
+<body>
+
+  <h2>Captura de Datos</h2>
+
+  <form id="formulario" action="https://script.google.com/macros/s/AKfycbzfjnwhcRNBi0t-mteUzM9gnbyxKQerrVCm9FCuASZ0-LWvG1Gwciu5hJTlGw6w6i1EBQ/exec" method="POST" target="hidden_iframe" onsubmit="enviado()">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="edad">Edad:</label><br>
+    <input type="number" id="edad" name="edad" required min="1" max="120"><br><br>
+
+    <label for="peso">Peso:</label><br>
+    <input type="number" id="Peso" name="peso" required min="1" max="120"><br><br>
+
+    <label for="comida">Comida Favorita:</label><br>
+    <input type="text" id="comida" name="comida" required><br><br>
+
+  <label for="ciudad">Ciudad de Nacimiento:</label><br>
+    <input type="text" id="ciudad" name="ciudad" required><br><br>
+
+    <label for="altura">Altura:</label><br>
+    <input type="number" id="altura" name="altura" required min="1" max="220"><br><br>
+
+    <label for="bebidafav">Bebida favorita:</label><br>
+    <input type="text" id="bebidafav" name="bebidafav" required><br><br>
+
+    <button type="submit" id="btnEnviar">Enviar</button>
+  </form>
+
+  <p id="estado"></p>
+
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+  <script>
+    function enviado() {
+      document.getElementById('btnEnviar').disabled = true;
+      document.getElementById('estado').textContent = 'Guardando...';
+
+      setTimeout(function () {
+        document.getElementById('estado').textContent = '¡Registro guardado con éxito!';
+        document.getElementById('formulario').reset();
+        document.getElementById('btnEnviar').disabled = false;
+      }, 1500);
+    }
+  </script>
+
+</body>
+
+</html>
